@@ -1,5 +1,5 @@
 
-* Description
+## Description
 
 This utility implements a simple word counter for text files. The words to be 
 counted are selected from a list contained in the file "dictfile" which must be 
@@ -9,7 +9,7 @@ In order to have an almost constant search time, the dictionary words are stored
 on a hash table which is implemented using the standard chaining scheme, 
 i.e. as an array of linked lists.  
 
-* Compilation
+## Compilation
 
 For compiling simply type:
 
@@ -34,7 +34,7 @@ turn on of debugging symbols, the program can be compiled in debug mode with:
 make debug
 ```
 
-* Usage
+## Usage
 
 Assuming that a text file "./dictfile" containing the dictionary is present 
 in the working directory, use the word counter as follows:
@@ -63,7 +63,7 @@ NN1 \t total dictionary words
 NN2 \t total words in the text
 
 
-* Limitations
+## Limitations
 
 - for speeding up calculations a builtin compiler function has been used. This is 
 likely not working with the Windows compiler (not tested). The actual performance 
