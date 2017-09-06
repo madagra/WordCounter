@@ -147,11 +147,10 @@ ht_free(hash_table ht)
                     free(hcur->word);
                     free(hcur);
                 }
-                free(ht[i]);
             }
         }
+        free(ht);
     }
-    free(ht);
 }
 
 /* allocate one one of the hash table */
