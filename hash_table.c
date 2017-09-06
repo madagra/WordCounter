@@ -147,6 +147,7 @@ ht_free(hash_table ht)
                     free(hcur->word);
                     free(hcur);
                 }
+                free(ht[i]);
             }
         }
     }
@@ -162,11 +163,11 @@ static hash_node* set_ht_node(const char *word)
     if( NULL == htmp) {
         return NULL;
     }
-    htmp->word = malloc( (strlen(word)+1) * sizeof(char));
-    if (NULL == htmp->word) {
+    htmp->word = NULL;
+    ssize_t bytes = asprintf(&htmp->word,"%s",word);
+    if (-1 == bytes) {
         return NULL;
     }
-    strcpy(htmp->word,word);
     htmp->count = 0;
     return htmp;
 }
